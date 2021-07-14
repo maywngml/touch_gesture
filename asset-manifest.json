@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/touch_gesture/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/touch_gesture/static/js/main.78b128cf.chunk.js",
-    "main.js.map": "/touch_gesture/static/js/main.78b128cf.chunk.js.map",
+    "main.js": "/touch_gesture/static/js/main.5c2e0399.chunk.js",
+    "main.js.map": "/touch_gesture/static/js/main.5c2e0399.chunk.js.map",
     "runtime-main.js": "/touch_gesture/static/js/runtime-main.2d3ff60f.js",
     "runtime-main.js.map": "/touch_gesture/static/js/runtime-main.2d3ff60f.js.map",
     "static/js/2.98ebd889.chunk.js": "/touch_gesture/static/js/2.98ebd889.chunk.js",
@@ -11,13 +11,12 @@
     "static/js/3.69f412db.chunk.js.map": "/touch_gesture/static/js/3.69f412db.chunk.js.map",
     "index.html": "/touch_gesture/index.html",
     "static/css/main.8c8b27cf.chunk.css.map": "/touch_gesture/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.98ebd889.chunk.js.LICENSE.txt": "/touch_gesture/static/js/2.98ebd889.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/touch_gesture/static/media/logo.6ce24c58.svg"
+    "static/js/2.98ebd889.chunk.js.LICENSE.txt": "/touch_gesture/static/js/2.98ebd889.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2d3ff60f.js",
     "static/js/2.98ebd889.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.78b128cf.chunk.js"
+    "static/js/main.5c2e0399.chunk.js"
   ]
 }
