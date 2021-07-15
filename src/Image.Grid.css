@@ -1,0 +1,28 @@
+/* .grid-area {
+    background: sandybrown;
+} */
+
+.touch-area {
+    height: 90vh;
+    touch-action: pinch-zoom;
+    /* background-color: rgb(203, 240, 255); */
+}
+
+.cards {
+    /* height: 90%; */
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); */
+    grid-gap: 5px;
+    max-width: 90%;
+    margin: 0 auto 30px;
+}
+
+.card-area {
+    position: relative;
+}
+
+.card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
