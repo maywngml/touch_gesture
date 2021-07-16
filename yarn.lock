@@ -9092,10 +9092,9 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
-react-photo-feed@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/react-photo-feed/-/react-photo-feed-1.0.13.tgz#500a25d743f228865eab45ec192b66bf0b9f59c6"
-  integrity sha512-yWPhK4YNd9fyMnEMotL98sc6TqsalsXt4bhpbX5Y+cSQEYwsgXJDhU3ePqIiAJrumwQ36YGfwlZyuVOJyPkmvQ==
+"react-photo-feed@https://github.com/maywngml/react-photo-feed.git":
+  version "1.0.10"
+  resolved "https://github.com/maywngml/react-photo-feed.git#a4c543a9fe9067cf955ca2cbb06b64380339a32a"
   dependencies:
     null-loader "^0.1.1"
     prop-types "^15.5.10"

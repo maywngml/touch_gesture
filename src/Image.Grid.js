@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PhotoGrid from "react-photo-feed";
 import Hammer from "react-hammerjs";
-// import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import "./Image.Grid.css";
 import golf from "./assets/golf.jpg";
-import sample from "./assets/sample.mp4";
+import sampleVideo from "./assets/sample_video.mp4";
+import shot from "./assets/shot.png";
+import sampleImg from "./assets/sample_img.jpg";
 import "react-photo-feed/library/style.css";
 
 function ImageGrid() {
-    const [cardWidthIndex, setCardWidthIndex] = useState(2);
+    const [cardWidthIndex, setCardWidthIndex] = useState(0);
     const [pinchFlag, setPinchFlag] = useState({
         pinchInFlag: false,
         pinchOutFlag: false,
     });
     const { pinchInFlag, pinchOutFlag } = pinchFlag;
-    const cardWidthArray = [1, 2, 3, 5];
+    const cardWidthArray = [1, 2, 3, 4, 5];
 
     const handlePinchIn = () => {
         if (!pinchInFlag && cardWidthIndex < 3) {
@@ -39,71 +40,85 @@ function ImageGrid() {
             id: 1,
             src: golf,
             bigSrc: golf,
+            isVideo: false,
         },
         {
-            id: 1,
-            src: golf,
-            bigSrc: golf,
+            id: 2,
+            src: sampleVideo,
+            bigSrc: sampleVideo,
+            isVideo: true,
         },
         {
-            id: 1,
+            id: 3,
             src: golf,
             bigSrc: golf,
+            isVideo: false,
         },
         {
-            id: 1,
-            src: golf,
-            bigSrc: golf,
+            id: 4,
+            src: shot,
+            bigSrc: shot,
+            isVideo: false,
         },
         {
-            id: 1,
+            id: 5,
             src: golf,
             bigSrc: golf,
+            isVideo: false,
         },
         {
-            id: 1,
-            src: golf,
-            bigSrc: golf,
+            id: 6,
+            src: sampleVideo,
+            bigSrc: sampleVideo,
+            isVideo: true,
         },
         {
-            id: 1,
-            src: golf,
-            bigSrc: golf,
+            id: 7,
+            src: shot,
+            bigSrc: shot,
+            isVideo: false,
         },
         {
-            id: 1,
+            id: 8,
             src: golf,
             bigSrc: golf,
+            isVideo: false,
         },
         {
-            id: 1,
-            src: golf,
-            bigSrc: golf,
+            id: 9,
+            src: sampleVideo,
+            bigSrc: sampleVideo,
+            isVideo: true,
         },
         {
-            id: 1,
+            id: 10,
             src: golf,
             bigSrc: golf,
+            isVideo: false,
         },
         {
-            id: 1,
-            src: golf,
-            bigSrc: golf,
+            id: 11,
+            src: shot,
+            bigSrc: shot,
+            isVideo: false,
         },
         {
-            id: 1,
+            id: 12,
             src: golf,
             bigSrc: golf,
+            isVideo: false,
         },
         {
-            id: 1,
+            id: 13,
             src: golf,
             bigSrc: golf,
+            isVideo: false,
         },
         {
-            id: 1,
+            id: 14,
             src: golf,
             bigSrc: golf,
+            isVideo: false,
         },
     ];
 
@@ -118,9 +133,8 @@ function ImageGrid() {
                 },
             }}
         >
-            {/* <div>{cardWidthIndex}</div> */}
             <div className="touch-area">
-                version 17, {pinchInFlag ? 1 : 0}, {pinchOutFlag ? 1 : 0},{" "}
+                version 24, {pinchInFlag ? 1 : 0}, {pinchOutFlag ? 1 : 0},{" "}
                 {cardWidthIndex}
                 <PhotoGrid
                     columns={cardWidthArray[cardWidthIndex]}

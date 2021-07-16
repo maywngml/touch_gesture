@@ -1,0 +1,49 @@
+diff --git a/node_modules/react-photo-feed/src/components/PhotoGrid.js b/node_modules/react-photo-feed/src/components/PhotoGrid.js
+index cd8d0e0..119a01b 100644
+--- a/node_modules/react-photo-feed/src/components/PhotoGrid.js
++++ b/node_modules/react-photo-feed/src/components/PhotoGrid.js
+@@ -29,8 +29,8 @@ class PhotoGrid extends React.Component {
+ 
+     getGridElements() {
+         const {photos}  = this.props;
+-        const classNames = this.isShowInfo() ? [styles.imageGridItem, styles.column1] : [styles.imageGridItem];
+-        const style = this.isShowInfo() ? {} : {width : this.getPercentWidth() + '%'};
++        const classNames = [styles.imageGridItem];
++        const style = {width : this.getPercentWidth() + '%'};
+ 
+         return photos.map((photo, index) => (
+             <div className={classNames.join(' ')}
+@@ -43,19 +43,15 @@ class PhotoGrid extends React.Component {
+     }
+ 
+     getImageElement = (photo, index) => {
+-        const InformationElement = this.props.InformationElement ? this.props.InformationElement : DefaultInfoElement;
+-        const classNames = this.isShowInfo() ? [styles.imageWrapper, styles.column1Image] : [styles.imageWrapper];
++        // const InformationElement = this.props.InformationElement ? this.props.InformationElement : DefaultInfoElement;
++        const classNames = [styles.imageWrapper];
+         const style = {backgroundImage : `url(${photo.src})`};
+ 
+         return (
+-            <div >
+-                <div className={classNames.join(' ')}
+-                     onClick={this.image_clickHandler(photo, index)}
+-                     style={style}>
+-					<a href="#">{photo.title}</a>
+-                </div>
+-                {this.isShowInfo() ? <InformationElement photo={photo}/> : null }
+-
++            <div className={classNames.join(' ')}
++                onClick={this.image_clickHandler(photo, index)}
++                style={style}>
++				<a href="#">{photo.title}</a>
+             </div>
+         );
+     };
+@@ -100,7 +96,6 @@ class PhotoGrid extends React.Component {
+ 		})
+     };
+ 
+-    isShowInfo = () => this.props.columns == 1;
+     getPercentWidth = () => 100 / this.props.columns - 1;
+     getNextPhotoIndex = currentIndex => this.props.photos.length > currentIndex + 1 ? currentIndex + 1  : 0;
+     getPreviousPhotoIndex = currentIndex => currentIndex - 1 >= 0 ? currentIndex - 1  : this.props.photos.length - 1;
