@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/touch_gesture/static/css/main.1234d6e6.chunk.css",
-    "main.js": "/touch_gesture/static/js/main.a3937810.chunk.js",
-    "main.js.map": "/touch_gesture/static/js/main.a3937810.chunk.js.map",
+    "main.js": "/touch_gesture/static/js/main.32d1c149.chunk.js",
+    "main.js.map": "/touch_gesture/static/js/main.32d1c149.chunk.js.map",
     "runtime-main.js": "/touch_gesture/static/js/runtime-main.b150e4b1.js",
     "runtime-main.js.map": "/touch_gesture/static/js/runtime-main.b150e4b1.js.map",
     "static/css/2.e2366933.chunk.css": "/touch_gesture/static/css/2.e2366933.chunk.css",
@@ -23,6 +23,6 @@
     "static/css/2.e2366933.chunk.css",
     "static/js/2.ff38f04c.chunk.js",
     "static/css/main.1234d6e6.chunk.css",
-    "static/js/main.a3937810.chunk.js"
+    "static/js/main.32d1c149.chunk.js"
   ]
 }
