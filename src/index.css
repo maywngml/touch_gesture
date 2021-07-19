@@ -5,6 +5,9 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* scroll 막는 설정 */
+    /* touch-action: none; */
+    touch-action: pan-y;
 }
 
 code {

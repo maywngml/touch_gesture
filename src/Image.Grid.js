@@ -1,28 +1,28 @@
 import React, { useState, useRef } from "react";
 import PhotoGrid from "react-photo-feed";
-import Hammer from "react-hammerjs";
+import QuickPinchZoom from "react-quick-pinch-zoom";
+// import Hammer from "react-hammerjs";
 import "./Image.Grid.css";
 import golf from "./assets/golf.jpg";
 import sampleVideo from "./assets/sample_video.mp4";
 import shot from "./assets/shot.png";
+import playButton from "./assets/playButton.png";
 import sampleImg from "./assets/sample_img.jpg";
 import "react-photo-feed/library/style.css";
 
 function ImageGrid() {
-    const [cardWidthIndex, setCardWidthIndex] = useState(2);
+    const [cardWidthIndex, setCardWidthIndex] = useState(0);
     const [pinchAble, setPinchAble] = useState(true);
     const [pinchFlag, setPinchFlag] = useState({
         pinchInFlag: false,
         pinchOutFlag: false,
     });
     const { pinchInFlag, pinchOutFlag } = pinchFlag;
-    const hammer = useRef();
-    const cardWidthArray = [1, 2, 3, 4, 5];
+    const cardWidthArray = [1, 2, 3, 4, 6];
     let pointerCache = [];
 
-
     const handlePinchIn = () => {
-        if (!pinchInFlag && cardWidthIndex < 3) {
+        if (!pinchInFlag && cardWidthIndex < 4) {
             setPinchFlag({ pinchInFlag: true, pinchOutFlag: false });
             setCardWidthIndex(cardWidthIndex + 1);
         }
@@ -40,23 +40,36 @@ function ImageGrid() {
     };
 
     const removeEvent = (e) => {
-        const index = pointerCache.findIndex(cache => cache.pointerId === e.pointerId);
+        const index = pointerCache.findIndex(
+            (cache) => cache.pointerId === e.pointerId,
+        );
         pointerCache.splice(index, 1);
-    }
+    };
+
+    const changeOptionsPinch = (able) => {
+        setPinchAble(able);
+    };
 
     const handlePointerDown = (e) => {
         pointerCache.push(e);
         if (pointerCache.length >= 2) {
             setPinchAble(true);
         }
-    }
+    };
+
+    const handlePointerMove = (e) => {
+        const index = pointerCache.findIndex(
+            (cache) => cache.pointerId === e.pointerId,
+        );
+        pointerCache[index] = e;
+    };
 
     const handlePointerUp = (e) => {
         removeEvent(e);
-        if (pointerCache.length <= 1) {
+        if (pointerCache.length < 2) {
             setPinchAble(false);
         }
-    }
+    };
 
     const contents = [
         {
@@ -194,34 +207,37 @@ function ImageGrid() {
     ];
 
     return (
-        <Hammer
-            onPinchIn={handlePinchIn}
-            onPinchOut={handlePinchOut}
-            onPinchEnd={handlePinchEnd}
-            options={{
-                recognizers: {
-                    pinch: { enable: true },
-                },
-            }}
+        <QuickPinchZoom
+            onZoomUpdate={handlePinchIn}
+            onZoomEnd={handlePinchEnd}
+            // onPinchOut={handlePinchOut}
+            // onPinchEnd={handlePinchEnd}
+            // options={{
+            //     recognizers: {
+            //         pinch: { enable: pinchAble },
+            //     },
+            // }}
         >
             <div
                 className="touch-area"
                 // onPointerDown={handlePointerDown}
+                // onPointerMove={handlePointerMove}
                 // onPointerUp={handlePointerUp}
                 // onPointerCancel={handlePointerUp}
                 // onPointerOut={handlePointerUp}
                 // onPointerLeave={handlePointerUp}
             >
-                version 40, {pinchAble ? 1 : 0}
+                version 58, {pinchAble ? 1 : 0}
                 <PhotoGrid
                     pinchInFlag={pinchInFlag}
                     pinchOutFlag={pinchOutFlag}
                     columns={cardWidthArray[cardWidthIndex]}
                     photos={contents}
+                    playButton={playButton}
+                    changeOptionsPinch={changeOptionsPinch}
                 />
             </div>
-        </Hammer>
-
+        </QuickPinchZoom>
     );
 }
 

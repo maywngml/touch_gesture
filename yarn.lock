@@ -9094,12 +9094,17 @@ react-is@^17.0.1:
 
 "react-photo-feed@https://github.com/maywngml/react-photo-feed.git":
   version "1.0.10"
-  resolved "https://github.com/maywngml/react-photo-feed.git#bb129f9ed821a4db0847bcab2bc7a22dd43366eb"
+  resolved "https://github.com/maywngml/react-photo-feed.git#20da4f6fced7403f80d79d6b7cfae9ad4dbb11d4"
   dependencies:
     null-loader "^0.1.1"
     prop-types "^15.5.10"
     react "^15.0.0-rc.2"
     react-dom "^15.0.0-rc.2"
+
+react-quick-pinch-zoom@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/react-quick-pinch-zoom/-/react-quick-pinch-zoom-4.0.2.tgz#40dd4a0c4d78445555b68e176d68a6f094207536"
+  integrity sha512-gXAhixVJxarRqRqx+UqPKVPBNCDDczVPbIXMxmEyOKr8Tc+BDLuOTADwMk6rqasd2fuji4/NSbYbBQn9pO+4WA==
 
 react-refresh@^0.8.3:
   version "0.8.3"
