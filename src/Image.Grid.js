@@ -9,7 +9,7 @@ import sampleImg from "./assets/sample_img.jpg";
 import "react-photo-feed/library/style.css";
 
 function ImageGrid() {
-    const [cardWidthIndex, setCardWidthIndex] = useState(0);
+    const [cardWidthIndex, setCardWidthIndex] = useState(2);
     const [pinchFlag, setPinchFlag] = useState({
         pinchInFlag: false,
         pinchOutFlag: false,
