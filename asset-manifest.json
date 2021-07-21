@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/touch_gesture/static/css/main.0e265931.chunk.css",
-    "main.js": "/touch_gesture/static/js/main.a8778d80.chunk.js",
-    "main.js.map": "/touch_gesture/static/js/main.a8778d80.chunk.js.map",
-    "runtime-main.js": "/touch_gesture/static/js/runtime-main.a886e7a7.js",
-    "runtime-main.js.map": "/touch_gesture/static/js/runtime-main.a886e7a7.js.map",
+    "main.css": "/touch_gesture/static/css/main.ea746b41.chunk.css",
+    "main.js": "/touch_gesture/static/js/main.f809e2ef.chunk.js",
+    "main.js.map": "/touch_gesture/static/js/main.f809e2ef.chunk.js.map",
+    "runtime-main.js": "/touch_gesture/static/js/runtime-main.d5b20b0d.js",
+    "runtime-main.js.map": "/touch_gesture/static/js/runtime-main.d5b20b0d.js.map",
     "static/css/2.5b3404e6.chunk.css": "/touch_gesture/static/css/2.5b3404e6.chunk.css",
-    "static/js/2.2eb47682.chunk.js": "/touch_gesture/static/js/2.2eb47682.chunk.js",
-    "static/js/2.2eb47682.chunk.js.map": "/touch_gesture/static/js/2.2eb47682.chunk.js.map",
-    "static/js/3.a3d8eee8.chunk.js": "/touch_gesture/static/js/3.a3d8eee8.chunk.js",
-    "static/js/3.a3d8eee8.chunk.js.map": "/touch_gesture/static/js/3.a3d8eee8.chunk.js.map",
+    "static/js/2.4e585bbd.chunk.js": "/touch_gesture/static/js/2.4e585bbd.chunk.js",
+    "static/js/2.4e585bbd.chunk.js.map": "/touch_gesture/static/js/2.4e585bbd.chunk.js.map",
+    "static/js/3.ec028fbe.chunk.js": "/touch_gesture/static/js/3.ec028fbe.chunk.js",
+    "static/js/3.ec028fbe.chunk.js.map": "/touch_gesture/static/js/3.ec028fbe.chunk.js.map",
     "index.html": "/touch_gesture/index.html",
     "static/css/2.5b3404e6.chunk.css.map": "/touch_gesture/static/css/2.5b3404e6.chunk.css.map",
-    "static/css/main.0e265931.chunk.css.map": "/touch_gesture/static/css/main.0e265931.chunk.css.map",
-    "static/js/2.2eb47682.chunk.js.LICENSE.txt": "/touch_gesture/static/js/2.2eb47682.chunk.js.LICENSE.txt",
+    "static/css/main.ea746b41.chunk.css.map": "/touch_gesture/static/css/main.ea746b41.chunk.css.map",
+    "static/js/2.4e585bbd.chunk.js.LICENSE.txt": "/touch_gesture/static/js/2.4e585bbd.chunk.js.LICENSE.txt",
     "static/media/sample_img.d61e7308.jpg": "/touch_gesture/static/media/sample_img.d61e7308.jpg",
     "static/media/sample_video.e604973c.mp4": "/touch_gesture/static/media/sample_video.e604973c.mp4",
     "static/media/shot.dcdb1569.png": "/touch_gesture/static/media/shot.dcdb1569.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.a886e7a7.js",
+    "static/js/runtime-main.d5b20b0d.js",
     "static/css/2.5b3404e6.chunk.css",
-    "static/js/2.2eb47682.chunk.js",
-    "static/css/main.0e265931.chunk.css",
-    "static/js/main.a8778d80.chunk.js"
+    "static/js/2.4e585bbd.chunk.js",
+    "static/css/main.ea746b41.chunk.css",
+    "static/js/main.f809e2ef.chunk.js"
   ]
 }
