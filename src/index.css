@@ -7,7 +7,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     /* scroll 막는 설정 */
     /* touch-action: none; */
-    touch-action: pan-y;
+    /* touch-action: pan-y; */
 }
 
 code {
