@@ -1,33 +1,28 @@
 import React, { useState, useRef } from "react";
 import PhotoGrid from "react-photo-feed";
-import { useGesture, usePinch } from "react-use-gesture";
 import Contents from "./Contents";
-// import QuickPinchZoom from "react-quick-pinch-zoom";
-// import Hammer from "react-hammerjs";
 import "./Image.Grid.css";
 import playButton from "./assets/playButton.png";
 import "react-photo-feed/library/style.css";
 
-import golf from "./assets/golf.jpg";
-import sampleVideo from "./assets/sample_video.mp4";
-import shot from "./assets/shot.png";
-
 function ImageGrid() {
-    const [cardWidthIndex, setCardWidthIndex] = useState(2);
-    const [pinchAble, setPinchAble] = useState(true);
-    // const [scrollAble, setScrollAble] = useState(true);
+    const [isPinchAble, setIsPinchAble] = useState(true);
     const [pinchFlag, setPinchFlag] = useState({
         pinchInFlag: false,
         pinchOutFlag: false,
     });
     const { pinchInFlag, pinchOutFlag } = pinchFlag;
-    const [distance, setDistance] = useState(0);
+    const [cardWidthIndex, setCardWidthIndex] = useState(1);
     const cardWidthArray = [1, 2, 3, 4, 6];
     let pointerCache = [];
     let prevDistance = -1,
         pinchOutStartDistance = -1,
         pinchInStartDistance = -1;
-    let pinchChangeFlag = false;
+    // 축소하다 확대, 확대하다 축소할 경우를 위해서 사용하는 변수
+    // let pinchChangeFlag = false;
+    // 아래는 지우기
+    // const [location, setLocation] = useState("");
+    // const [temp, setTemp] = useState(0);
 
     const calDistance = (prev, cur) => {
         const distanceX =
@@ -45,7 +40,7 @@ function ImageGrid() {
                 pinchInFlag: true,
                 pinchOutFlag: false,
             });
-            pinchChangeFlag = false;
+            // pinchChangeFlag = false;
             setCardWidthIndex(cardWidthIndex + 1);
         }
     };
@@ -56,7 +51,7 @@ function ImageGrid() {
                 pinchInFlag: false,
                 pinchOutFlag: true,
             });
-            pinchChangeFlag = false;
+            // pinchChangeFlag = false;
             setCardWidthIndex(cardWidthIndex - 1);
         }
     };
@@ -67,18 +62,13 @@ function ImageGrid() {
         );
         pointerCache.splice(index, 1);
     };
-
-    const changeOptionsPinch = (able) => {
-        setPinchAble(able);
+    // 평소에는 pan-y이다가 이미지 클릭했을때 뒷부분에서 터치 안되도록 막음
+    const changeOptionsPinch = (isPinch) => {
+        setIsPinchAble(isPinch);
     };
 
     const handlePointerDown = (e) => {
         pointerCache.push(e);
-        // pointerCache가 1개일때는 div touch-action: none 아님,
-        // none 부분을 state값으로 주기
-        // if (pointerCache.length >= 2) {
-        //     setPinchAble(true);
-        // }
     };
 
     const handlePointerMove = (e) => {
@@ -88,26 +78,25 @@ function ImageGrid() {
         pointerCache[index] = e;
         if (pointerCache.length === 2) {
             const curDistance = calDistance(pointerCache[0], pointerCache[1]);
-            // changeOptionsPinch(true);
-            // setDistance(curDistance);
             if (prevDistance === -1) {
                 pinchOutStartDistance = curDistance;
                 pinchInStartDistance = curDistance;
             } else {
-                if (!pinchChangeFlag) {
-                    if (pinchOutFlag && curDistance < prevDistance) {
-                        pinchInStartDistance = prevDistance;
-                        pinchChangeFlag = true;
-                    }
-                    if (pinchInFlag && curDistance > prevDistance) {
-                        pinchOutStartDistance = prevDistance;
-                        pinchChangeFlag = true;
-                    }
-                }
-                if (curDistance > pinchOutStartDistance + 1) {
+                // 확대 -> 축소 / 축소 -> 확대 구현을 위한 부분
+                // if (!pinchChangeFlag) {
+                //     if (pinchOutFlag && curDistance < prevDistance) {
+                //         pinchInStartDistance = prevDistance;
+                //         pinchChangeFlag = true;
+                //     }
+                //     if (pinchInFlag && curDistance > prevDistance) {
+                //         pinchOutStartDistance = prevDistance;
+                //         pinchChangeFlag = true;
+                //     }
+                // }
+                if (curDistance > pinchOutStartDistance + 3) {
                     handlePinchOut();
                 }
-                if (curDistance < pinchInStartDistance - 1) {
+                if (curDistance < pinchInStartDistance - 3) {
                     handlePinchIn();
                 }
             }
@@ -125,7 +114,9 @@ function ImageGrid() {
                 pinchInFlag: false,
                 pinchOutFlag: false,
             });
-            pinchChangeFlag = false;
+            // pinchChangeFlag = false;
+            // changeOptionsAction(false, true);
+            // setActionAble({ pinchAble: false, scrollAble: true });
             // changeOptionsPinch(false);
         }
     };
@@ -133,21 +124,19 @@ function ImageGrid() {
     return (
         <>
             <div>
-                version 2, {pinchAble ? 1 : 0}, pinchInFlag:
-                {pinchInFlag ? 1 : 0}, pinchOutFlag: {pinchOutFlag ? 1 : 0},
-                distance: {distance}
+                version 17, isPinchAble:
+                {isPinchAble ? 1 : 0}, pinchOutFlag: {pinchOutFlag ? 1 : 0},
+                cardWidthIndex: {cardWidthIndex}
             </div>
             <div
                 className="touch-area"
-                // ref={touchTarget}
-                onPointerDown={pinchAble && handlePointerDown}
-                onPointerMove={pinchAble && handlePointerMove}
+                onPointerDown={isPinchAble && handlePointerDown}
+                onPointerMove={isPinchAble && handlePointerMove}
                 onPointerUp={handlePointerUp}
                 onPointerCancel={handlePointerUp}
                 onPointerOut={handlePointerUp}
                 onPointerLeave={handlePointerUp}
-                // style={{ touchAction: pinchAble ? "none" : "auto" }}
-                style={{ touchAction: "none" }}
+                style={{ touchAction: isPinchAble ? "pan-y" : "none" }}
             >
                 <PhotoGrid
                     pinchInFlag={pinchInFlag}

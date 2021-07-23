@@ -1,5 +1,6 @@
 .touch-area {
-    height: 90vh;
+    /* height: 90vh; */
+    /* overflow: hidden; */
     /* touch-action: pinch-zoom; */
     /* background-color: rgb(203, 240, 255); */
 }

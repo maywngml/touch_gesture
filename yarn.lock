@@ -9094,7 +9094,7 @@ react-is@^17.0.1:
 
 "react-photo-feed@https://github.com/maywngml/react-photo-feed.git":
   version "1.0.10"
-  resolved "https://github.com/maywngml/react-photo-feed.git#61e97b56001b701f8476739bf78d9d8ccaec22fb"
+  resolved "https://github.com/maywngml/react-photo-feed.git#42dddf19084bc06580e260e15cf909881f25c1aa"
   dependencies:
     null-loader "^0.1.1"
     prop-types "^15.5.10"
